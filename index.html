@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        "use strict";
+        let boxTop = 200;
+        let boxLeft = 200;
+        document.addEventListener("keydown", (event) => {
+            const keyName = event.key;
+            // const image = document.querySelector('img')
+            // image.style.transform = 'rotate(45deg)'
+            if (keyName === "ArrowUp") {
+                boxTop -= 10;
+                document.getElementById("box").style.top = `${boxTop}px`;
+            } else if (keyName === "ArrowDown") {
+                boxTop += 10;
+                document.getElementById("box").style.top = `${boxTop}px`;
+            } else if (keyName === "ArrowLeft") {
+                boxLeft -= 10;
+                document.getElementById("box").style.left = `${boxLeft}px`;
+            } else if (keyName === "ArrowRight") {
+                boxLeft += 10;
+                document.getElementById("box").style.left = `${boxLeft}px`;
+            }
+        });
+    </script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            border-radius: 100%;
+            border: 4px #000000 solid;
+            transition: 0.3s;
+        }
+
+        #box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="./assets/Woozie.jpg" alt="Woozie" />
+    </div>
+</body>
+
+</html>
